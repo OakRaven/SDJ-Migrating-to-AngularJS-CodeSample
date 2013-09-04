@@ -1,0 +1,34 @@
+<div id="search-panel">
+  <div class="row">
+    <div class="span5">
+      <h4>Add Container Number</h4>
+      <div class="well">
+        <input type="text" class="input-large container-number" placeholder="ABCD111111" style="width: 267px; height: 30px; margin-bottom: 0;"
+          ng-model="newContainerNumber">
+        <button class="btn btn-default" type="button" title="Add container to search list."
+            ng-click="add()" ng-disabled="!canAdd()"><i class="icon-plus"></i> Add</button>
+
+      </div>
+      <div ng-show="canSearch()">
+        <h4>Containers to Search</h4>
+        <div class="well">
+            <div ng-repeat="container in containers" class="row" style="height: 30px;">
+              <div class="span1">
+                <button type="button" class="btn btn-default btn-sm" ng-click="remove(container)" title="Remove {{container}}">
+                  <i class="icon-remove"></i>
+                </button>
+              </div>
+              <div class="container-number" style="padding-top: 3px;">
+                {{container}}
+              </div>
+            </div>
+          </div>
+          <div class="pull-right">
+            <button ng-click="search()" class="btn btn-primary" title="Perform search">Search</button>
+            <button ng-click="reset()" class="btn btn-danger" title="Remove all containers">Reset</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

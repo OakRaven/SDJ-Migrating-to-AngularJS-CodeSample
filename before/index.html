@@ -1,0 +1,124 @@
+<html>
+
+<head>
+  <title>AngularJS Migration Example</title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/sample.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Original (jQuery)</h1>
+    <p>
+      This is a simplified version of an exsiting application that can greatly benefit from using AngularJS.
+    </p>
+    <p>
+      Add your container numbers using the area below then click the Search button.
+    </p>
+    <p>
+      <i><b>note:</b> In this sample, you can enter ABCD111111, ABCD222222, etc. to ABCD999999</i>.
+    </p>
+    <div id="search-container">
+      <div class="row">
+        <div class="span5">
+          <form>
+          <h4>Add Container Number</h4>
+          <div class="well">
+            <input id="container-number" type="text" class="input-large" placeholder="ABCD111111" style="width: 267px; height: 30px; margin-bottom: 0;">
+            <button id="add-button" class="btn" type="button" title="Add container to search list."><i class="icon-plus"></i> Add</button>
+          </div>
+          <h4>Containers to Search</h4>
+          <div class="well">
+            <select id="search-container-list" multiple class="input-large" style="width: 100%;">
+            </select>
+            <br>
+            <button id="remove-button" class="btn"><i class="icon-remove"></i> Remove</button>
+          </div>
+          <div class="pull-right">
+            <button id="search-button" class="btn btn-primary">Search</button>
+            <button id="reset-button" class="btn btn-danger">Reset</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="results-container" style="display: none;">
+      <h4>Search Results</h4>
+      <div id="search-results">
+        <table id="results-summary" class="table table-bordered table-condensed table-striped table-hover">
+          <thead>
+            <tr>
+              <th rowspan="2">Container</th>
+              <th rowspan="2">Size</th>
+              <th colspan="5">Discharge Info</th>
+              <th colspan="3">Current Status</th>
+            </tr>
+            <tr>
+              <th>Vessel</th>
+              <th>Voyage</th>
+              <th>Owner</th>
+              <th>Date/Time</th>
+              <th>Location</th>
+              <th>Activity</th>
+              <th>Date/Time</th>
+              <th>Location</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+
+        <div id="additional-info-container" style="display: none;">
+
+          <h4>Dwell Time</h4>
+          <table id="results-dwell-time" class="table table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th rowspan="2">Container</th>
+                <th rowspan="2">Discharge</th>
+                <th rowspan="2">Ramp</th>
+                <th rowspan="2">Departure</th>
+                <th colspan="3">Dwell (hours)</th>
+              </tr>
+              <tr>
+                <th>Term</th>
+                <th>Rail</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+
+          <h4>Movements</h4>
+          <table id="results-movements" class="table table-bordered table-condensed table-striped">
+            <thead>
+              <tr>
+                <th>Container</th>
+                <th>From</th>
+                <th>Departure</th>
+                <th>To</th>
+                <th>Arrival</th>
+                <th>Car</th>
+                <th>Train</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <button id="modify-button" class="btn btn-default">Modify Search</button>
+      <button id="new-button" class="btn btn-danger">New Search</button>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="js/lib/jquery.min.js"></script>
+  <script type="text/javascript" src="js/lib/underscore-min.js"></script>
+  <script type="text/javascript" src="js/sample-data.json"></script>
+  <script type="text/javascript" src="js/search-app.js"></script>
+</body>
+
+</html>

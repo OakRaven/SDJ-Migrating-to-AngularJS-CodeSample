@@ -1,0 +1,22 @@
+thead tr {
+  background-color: #222;
+}
+
+thead th {
+  text-align: center;
+  color: #F8C713;
+  font-size: 10pt;
+}
+
+tbody td {
+  font-size: 10pt;
+  text-align: center;
+}
+
+.selected td {
+  background-color: yellow !important;
+}
+
+.container-number {
+  font-family: courier;
+}

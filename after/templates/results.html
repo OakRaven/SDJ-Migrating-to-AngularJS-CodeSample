@@ -1,0 +1,103 @@
+<div id="results-panel">
+  <div class="row">
+    <div class="span12">
+      <h4>Search Results {{containers.length}}</h4>
+      <div id="search-results">
+        <table class="table table-bordered table-condensed table-striped table-hover">
+          <thead>
+            <tr>
+              <th rowspan="2">Container</th>
+              <th rowspan="2">Size</th>
+              <th colspan="5">Discharge Info</th>
+              <th colspan="3">Current Status</th>
+            </tr>
+            <tr>
+              <th>Vessel</th>
+              <th>Voyage</th>
+              <th>Owner</th>
+              <th>Date/Time</th>
+              <th>Location</th>
+              <th>Activity</th>
+              <th>Date/Time</th>
+              <th>Location</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="container in searchResults" ng-class="{true: 'selected', false: ''}[isSelected(container)]">
+              <td><a href="" ng-click="select(container)">{{container.Container}}</a></td>
+              <td>{{container.Size}}</td>
+              <td>{{container.Vessel}}</td>
+              <td>{{container.Voyage}}</td>
+              <td>{{container.Owner}}</td>
+              <td>{{container.DischargeDate}}</td>
+              <td>{{container.Location}}</td>
+              <td>{{container.Activity}}</td>
+              <td>{{container.ActivityDate}}</td>
+              <td>{{container.ActivityLocation}}</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div id="additional-info-container" ng-show="selectedContainer">
+
+          <h4>Dwell Time</h4>
+          <table class="table table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th rowspan="2">Container</th>
+                <th rowspan="2">Discharge</th>
+                <th rowspan="2">Ramp</th>
+                <th rowspan="2">Departure</th>
+                <th colspan="3">Dwell (hours)</th>
+              </tr>
+              <tr>
+                <th>Term</th>
+                <th>Rail</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{selectedContainer.DwellTime.Container}}</td>
+                <td>{{selectedContainer.DwellTime.DischargeDate}}</td>
+                <td>{{selectedContainer.DwellTime.RampDate}}</td>
+                <td>{{selectedContainer.DwellTime.DepartureDate}}</td>
+                <td>{{selectedContainer.DwellTime.TermDwell}}</td>
+                <td>{{selectedContainer.DwellTime.RailDwell}}</td>
+                <td>{{selectedContainer.DwellTime.TermDwell + selectedContainer.DwellTime.RailDwell}}</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4>Movements</h4>
+          <table class="table table-bordered table-condensed table-striped">
+            <thead>
+              <tr>
+                <th>Container</th>
+                <th>From</th>
+                <th>Departure</th>
+                <th>To</th>
+                <th>Arrival</th>
+                <th>Car</th>
+                <th>Train</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="movement in selectedContainer.Movements">
+                <td>{{movement.Container}}</td>
+                <td>{{movement.From}}</td>
+                <td>{{movement.DepartureDate}}</td>
+                <td>{{movement.To}}</td>
+                <td>{{movement.ArrivalDate}}</td>
+                <td>{{movement.Car}}</td>
+                <td>{{movement.Train}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <button class="btn btn-default" ng-click="modifySearch()">Modify Search</button>
+      <button class="btn btn-danger" ng-click="newSearch()">New Search</button>
+    </div>
+  </div>
+</div>

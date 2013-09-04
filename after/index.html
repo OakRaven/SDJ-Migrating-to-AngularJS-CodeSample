@@ -1,0 +1,33 @@
+<html>
+<head>
+  <title>AngularJS Migration Example</title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/sample.css">
+</head>
+
+<body ng-app="SearchApp">
+  <div class="container">
+    <h1>Finished (AngularJS)</h1>
+    <p>
+      This is a simplified version of an exsiting application that can greatly benefit from using AngularJS.
+    </p>
+    <p>
+      Add your container numbers using the area below then click the Search button.
+    </p>
+    <p>
+      <i><b>note:</b> In this sample, you can enter ABCD111111, ABCD222222, etc. to ABCD999999</i>.
+    </p>
+    <ng-view></ng-view>
+  </div>
+
+  <script type="text/javascript" src="js/lib/angular.min.js"></script>
+  <script type="text/javascript" src="js/lib/underscore-min.js"></script>
+  <script type="text/javascript" src="js/sample-data.json"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="js/services/services.js"></script>
+  <script type="text/javascript" src="js/services/data-service.js"></script>
+  <script type="text/javascript" src="js/services/parameter-service.js"></script>
+  <script type="text/javascript" src="js/controllers/search-controller.js"></script>
+  <script type="text/javascript" src="js/controllers/results-controller.js"></script>
+</body>
+</html>
