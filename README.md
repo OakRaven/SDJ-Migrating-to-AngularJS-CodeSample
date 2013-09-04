@@ -5,7 +5,7 @@ This is a sample application to demonstrate migrating an application from an
 over-reliance on jQuery to implementing AngularJS.
 
 BEFORE
-======
+------
 
 The "before" code is a typical jQuery application with plenty of HTML DOM hooks
 (IDs and classes) used to let jQuery reach in and manipulate our web page. The
@@ -24,7 +24,7 @@ All of these problems conspire to make the application more difficult to
 maintain over time.
 
 AFTER
-=====
+-----
 
 The "after" code is the same application but having been migrated to AngularJS.
 The Angular solution is much more modular. Our views are pulled into their own
