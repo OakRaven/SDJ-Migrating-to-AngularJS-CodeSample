@@ -5,7 +5,7 @@
     function SearchController($scope, _, parameterService, $location){
       $scope.newContainerNumber = '';
 
-      $scope.containers = parameterService.getParameter('containers') || ['ABCD222222', 'ABCD444444', 'ABCD888888'];
+      $scope.containers = parameterService.getParameter('containers') || [];
 
       $scope.canAdd = function(){
         return $scope.newContainerNumber !== '';
