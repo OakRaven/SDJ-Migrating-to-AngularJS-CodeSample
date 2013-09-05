@@ -3,11 +3,10 @@
     <div class="span5">
       <h4>Add Container Number</h4>
       <div class="well">
-        <input type="text" class="input-large container-number" placeholder="ABCD111111" style="width: 267px; height: 30px; margin-bottom: 0;"
-          ng-model="newContainerNumber">
+        <input type="text" class="input-large container-number" placeholder="ABCD111111"
+          ng-model="newContainerNumber" style="width: 267px; height: 30px; margin-bottom: 0;">
         <button class="btn btn-default" type="button" title="Add container to search list."
             ng-click="add()" ng-disabled="!canAdd()"><i class="icon-plus"></i> Add</button>
-
       </div>
       <div ng-show="canSearch()">
         <h4>Containers to Search</h4>

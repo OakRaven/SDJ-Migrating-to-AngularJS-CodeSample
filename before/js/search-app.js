@@ -4,8 +4,8 @@
   // jQuery handles to DOM objects
   var $containerNumber =         $('#container-number'),
       $searchContainerList =     $('#search-container-list'),
-      $searchContainer =         $('#search-container'),
-      $resultsContainer =        $('#results-container'),
+      $searchPanel =             $('#search-panel'),
+      $resultsPanel =            $('#results-panel'),
       $additionalInfoContainer = $('#additional-info-container');
 
   // application variables
@@ -90,9 +90,9 @@
 
   // Hide search form and then continue search
   function searchFor(containerNumbers){
-    $searchContainer.slideUp('fast',
+    $searchPanel.slideUp('fast',
       function(){
-        performSearch(containerNumbers)
+        performSearch(containerNumbers);
       });
   }
 
@@ -126,7 +126,7 @@
 
     $('#results-summary tbody').append(html);
 
-    $resultsContainer.slideDown('fast');
+    $resultsPanel.slideDown('fast');
   }
 
   // Load data from web-service
@@ -211,8 +211,8 @@
   // Display the search form again, allowing the user to modify their search
   $('#modify-button').click(function(e){
     e.preventDefault();
-    $resultsContainer.slideUp('fast', function(){
-      $searchContainer.slideDown('fast', function(){
+    $resultsPanel.slideUp('fast', function(){
+      $searchPanel.slideDown('fast', function(){
         $containerNumber.focus();
       });
     });
@@ -225,8 +225,8 @@
       containersToSearch = [];
       refreshContainerList();
 
-      $resultsContainer.slideUp('fast', function(){
-        $searchContainer.slideDown('fast', function(){
+      $resultsPanel.slideUp('fast', function(){
+        $searchPanel.slideDown('fast', function(){
           $containerNumber.focus();
         });
       });
